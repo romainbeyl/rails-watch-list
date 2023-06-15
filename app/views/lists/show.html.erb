@@ -1,0 +1,23 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+</div>
+  <div class="card display-flex-inline justify-content-flex-start">
+    <h3>Comments :</h3>
+    <%= @bookmark.comment %>
+    </div>
+  <div class="container display-flex-inline justify-content-flex-start">
+      <% @list.movies.each do |movie| %>
+        <div class="card display-flex">
+            <p class="d-flex justify-content-center"><%= movie.title %></p>
+            <p class="d-flex justify-content-center"><%= movie.rating %></p>
+            <p class="d-flex justify-content-center"><%= movie.overview %></p>
+            <div class="d-flex justify-content-center"><%= image_tag movie.poster_url, width: 150 %></div>
+          </div>
+        </div>
+        <% end %>
+      <%= link_to "Add a film / comment", new_list_bookmark_path(@list), style: "text-decoration:none" %>
+  </div>
+
+<div class="container justify-content-lg-between m-2">
+<%= link_to "Back to lists", root_path, style: "text-decoration:none" %>
+</div>
