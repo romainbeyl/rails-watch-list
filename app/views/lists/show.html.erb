@@ -6,13 +6,13 @@
   <div class="container display-flex-inline justify-content-flex-start">
       <% @list.movies.each do |movie| %>
         <div class="card display-flex">
-            <p class="d-flex justify-content-center"><%= movie.title %></p>
-            <p class="d-flex justify-content-center"><%= movie.rating %></p>
-            <p class="d-flex justify-content-center"><%= movie.overview %></p>
-            <p class="d-flex justify-content-center"><%= @list.bookmarks.where("movie_id = #{movie.id}")[0].comment %></p>
-            <div class="d-flex justify-content-center"><%= image_tag movie.poster_url, width: 150 %>
+          <p class="d-flex justify-content-center"><%= movie.title %></p>
+          <p class="d-flex justify-content-center"><%= movie.rating %></p>
+          <p class="d-flex justify-content-center"><%= movie.overview %></p>
+          <p class="d-flex justify-content-center"><%= @list.bookmarks.where("movie_id = #{movie.id}")[0].comment %></p>
+          <div class="d-flex justify-content-center"><%= image_tag movie.poster_url, width: 150 %>
           </div>
-        </div>
+          </div>
         <% end %>
       <%= link_to "Add a film / comment", new_list_bookmark_path(@list), style: "text-decoration:none" %>
   </div>

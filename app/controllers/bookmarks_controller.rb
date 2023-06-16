@@ -4,9 +4,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
-  def delete
-  end
-
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
@@ -24,6 +21,6 @@ class BookmarksController < ApplicationController
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :list_id, :movie_id)
+    params.require(:bookmark).permit(:comment, :movie_id)
   end
 end
